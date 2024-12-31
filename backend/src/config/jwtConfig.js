@@ -11,20 +11,19 @@ const generateToken = (id)=>{
 const verifyToken = async (token)=>{
 
     try{
-        console.log('Verificando token:', token);
+        //console.log('Verificando token:', token);
         // Verifica se o token está na blacklist do Redis
         const isBlascklisted = await redisClient.get(`blacklist:${token}`);
 
-        console.log('Token está na blacklist?', isBlascklisted);
+        //console.log('Token está na blacklist?', isBlascklisted);
 
         if(isBlascklisted){
             throw new Error('Token Inválido');
         }
 
-        // Se o token não estiver na blacklist, verifica e retorna o token
-        //return jwt.verify(token, process.env.SECRET_JWT);
+        // Se o token não estiver na blacklist, verifica e retorna
         const decodedToken = jwt.verify(token, process.env.SECRET_JWT);
-        console.log('Token verificado com sucesso:', decodedToken);
+        //console.log('Token verificado com sucesso:', decodedToken);
 
         return decodedToken;
     }catch(error){

@@ -1,19 +1,19 @@
 //ARQUIVO POR RODAR O SERVIDOR
 
+//puxar dotenv
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors({
-  origin: process.env.ENABLED_CORS?.split(';') || []
-}));
-// app.use(cors());
+app.use(
+  cors({
+    origin: process.env.ENABLED_CORS?.split(';') || [], // Define os domínios permitidos em produção
+  })
+);
+
 app.use(express.json());
-
-
-//puxar dotenv
-const env = require('dotenv').config();
-
 
 //importando e usando rotas
 const usuarioRouter = require('./src/routes/userRouter');
