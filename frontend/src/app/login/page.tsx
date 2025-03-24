@@ -37,7 +37,7 @@ export default function Login() {
           maxAge: 60 * 60, // 1 hora
           path: '/', // Disponível em todo o site
           sameSite: 'lax',
-          secure: process.env.NODE_ENV === 'production', // Apenas habilita o secure em produção
+          secure: false, //process.env.NODE_ENV === 'production', // Apenas habilita o secure em produção
         });
 
         // Armazene o token em um cookie
@@ -45,7 +45,7 @@ export default function Login() {
           maxAge: 60 * 60, // 1 hora
           path: '/', // Disponível em todo o site
           sameSite: 'lax',
-          secure: process.env.NODE_ENV === 'production', // Apenas habilita o secure em produção
+          secure: false, //process.env.NODE_ENV === 'production', // Apenas habilita o secure em produção
         });
 
         // Armazene o username em um cookie
@@ -53,7 +53,7 @@ export default function Login() {
           maxAge: 60 * 60, // 1 hora
           path: '/', // Disponível em todo o site
           sameSite: 'lax',
-          secure: process.env.NODE_ENV === 'production', // Apenas habilita o secure em produção
+          secure: false, //process.env.NODE_ENV === 'production', // Apenas habilita o secure em produção
         });
 
         // Armazene o id do ultimo capitulo acessado pelo usuario em um cookie
@@ -61,7 +61,7 @@ export default function Login() {
           maxAge: 60 * 60, // 1 hora
           path: '/', // Disponível em todo o site
           sameSite: 'lax',
-          secure: process.env.NODE_ENV === 'production', // Apenas habilita o secure em produção
+          secure: false, // process.env.NODE_ENV === 'production', // Apenas habilita o secure em produção
         });
 
         // Redirecionar para home page
